@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <title>Blog - Create a new Blog</title>
+    </head>
+    <body>
+        <% if(errors) { %>
+            <ul>
+                <% for(let i=0; i<errors.length; i++) { %>
+                <li style="color: red"><%= errors[i].msg %></li>
+                <% } %>
+            </ul>
+        <% } %>
+        <form action="/blog/create" method="POST">
+            <input type="text" name="title" placeholder="Enter a blog title"><br>   
+            <textarea name="description" placeholder="Enter a blog description" cols="60" rows="20"></textarea><br>
+            <input type="submit" name="submit">
+        </form>
+    </body>
+</html>

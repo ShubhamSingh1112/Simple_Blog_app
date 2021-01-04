@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <title>Blog - Register</title>
+    </head>
+    <body>
+        <% if(errors) { %>
+            <ul>
+                <% for(let i=0; i<errors.length; i++) { %>
+                <li style="color: red"><%= errors[i].msg %></li>
+                <% } %>
+            </ul>
+        <% } %>
+        <form action="/register" method="POST">
+            <input type="text" name="username" placeholder="username"><br> <input type="text" name="email" placeholder="email"><br>   
+            <input type="password" name="password" placeholder="password"><br>
+            <input type="password" name="confirm_password" placeholder="confirm password"><br>
+            <input type="submit" name="submit">
+        </form>
+    </body>
+</html>

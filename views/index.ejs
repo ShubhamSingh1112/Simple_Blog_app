@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Blog - Index</title>
+    </head>
+    
+    <body><% if {username} { %>
+        <h1>Welcome <%= username %>! <a href="/logout" style="font-size: 18px;"><sub>Logout</sub></a></h1>
+        <% } else { %> 
+        <h1>Welcome guest!</h1>
+        <a href="/register">Register</a> | <a href="/login">Login</a>
+        <% } %>
+        
+        <% if(blogs) { %>
+            <ul>
+                <% for(let i=0; i<blogs.length; i++) { %>
+                <li>
+                    <a href=<%= "/blog/" + blogs[i]._id %>
+                       <%= blogs[i].title %>
+                       </a>
+                </li>
+                <% } %>
+            </ul>
+        <% } else { %>
+        }
+    </body>
+</html>
